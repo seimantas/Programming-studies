@@ -1,0 +1,139 @@
+body {
+    background-color:rgb(238, 228, 250);
+    font-family: 'Roboto', sans-serif;
+} 
+
+header{
+    align-items: center;
+    background-color:aliceblue;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+.logo{
+    filter: drop-shadow(0 0 10px rgb(90, 163, 222));
+}
+
+nav a{
+    margin-left: 40px;
+    justify-content: space-between;
+    font-weight: bold;
+    text-decoration: none;
+     color: black;
+     transition: all 1s ease-out;
+}
+
+nav a:hover{
+    color: aliceblue;
+    filter: drop-shadow(0 0 5px rgb(1, 6, 25));
+}
+
+header div img{
+width: 30px;
+height: 30px;
+transition: all 1s ease-out;
+}
+
+img:hover{
+    filter: drop-shadow(0 0 5px rgb(1, 6, 25));
+}
+
+main{
+    text-align: center;
+    background-color:aliceblue;
+    border-radius: 10px;
+}
+
+main .t-shirts{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+    grid-row-gap: 60px;
+}
+
+h2{
+    padding-top: 10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    filter: drop-shadow(0 0 10px rgb(90, 163, 222));
+}
+
+h3{
+    margin: auto 0;
+}
+
+.t-shirt-item > p{
+    margin: auto 0;
+}
+
+main .backpack{ 
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+    grid-row-gap: 60px;
+}
+
+.backpack-items, .t-shirt-item{
+    width: 200px;
+    height: 260px;
+}
+
+img{
+    width: 130px;
+    height: 130px;
+}
+
+.backpack-items >p:last-child{
+    font-weight: bold;
+}
+
+.t-shirt-item >p:last-child{
+    font-weight: bold;
+}
+
+footer .footer-item{
+    display: flex;
+    justify-content: space-around;
+}
+
+footer h3{
+    margin: 30px;
+    filter: drop-shadow(0 0 10px rgb(90, 163, 222));
+}
+
+@media (max-width: 768px){
+    main .t-shirts, main .backpack{
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    .backpack-items, .t-shirt-item{
+        width: 160px;
+        height: 250px;
+    }
+
+    nav{
+        display: grid;
+    } 
+
+    header {
+        height: 90px;
+    }
+
+    h2{
+        margin-top: 20px;
+    margin-bottom: 20px;
+    }
+
+    header h2{
+        width: 80px;
+       text-align: center;
+    }
+
+    footer .footer-item{
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+}

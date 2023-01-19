@@ -1,0 +1,79 @@
+/* Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+p {
+  text-align: center;
+  background-color: #f7f7f7;
+  max-width: 80%;
+  margin: 50px auto;
+  font-size: larger;
+  border-radius: 10px;
+}
+
+/* Mobile first */
+.wrapper {
+  min-height: 100vh;
+  min-width: calc(100vw - (100vw - 100%));
+  background-color: #fec631;
+}
+
+.headline {
+  padding-top: 100px;
+  font-size: 2.5em;
+  text-align: center;
+  color: #000;
+  text-transform: uppercase;
+}
+
+form {
+  max-width: 80%;
+  margin: 50px auto;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 6px;
+}
+
+#search {
+  width: 65%;
+  margin: 0;
+  padding: 20px;
+  outline: 0;
+  border: 0;
+  font-size: 1.1em;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#submit-btn {
+  width: 35%;
+  background-color: #f7f7f7;
+  border: 0;
+  outline: 0;
+  font-size: 1.1em;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#submit-btn:hover {
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .headline {
+    font-size: 3.5em;
+  }
+
+  #search,
+  #submit-btn {
+    font-size: 2em;
+  }
+}

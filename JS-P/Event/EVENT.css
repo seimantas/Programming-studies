@@ -1,0 +1,8 @@
+#output {
+  padding: 0;
+  margin: auto 0;
+  height: 100px;
+  line-height: 100px;
+  background-color: rgb(231, 101, 101);
+  text-align: center;
+}

@@ -1,0 +1,67 @@
+body {
+    background-image: url(https://besthqwallpapers.com/Uploads/7-5-2020/132532/abstract-summer-landscape-forest-mountains-abstract-nature-backgrounds-abstract-mountains-landscape.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
+}
+
+.flex-conteiner {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(127, 255, 212, 0.51);
+    border-radius: 10px;
+    justify-content: space-evenly;
+    font-weight: bold;
+    padding: 5px;
+    margin: 5px;
+}
+
+.conteiner-items {
+    width: 100px;
+    height: 17px;
+    text-align: center;
+    background-color: rgba(102, 208, 173, 0.583);
+    border: 2px solid black;
+    border-radius: 5px;
+    filter: drop-shadow(2px 2px 1px black);
+    margin: 5px;
+    ;
+}
+
+div .conteiner-items a {
+    text-decoration: none;
+}
+
+.conteiner-items:hover {
+    background-color: rgba(149, 149, 240, 0.833);
+}
+
+.second-conteiner {
+    display: flex;
+    background-color: rgba(127, 255, 212, 0.51);
+    border-radius: 10px;
+    margin: 5px;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+
+.second-conteiner:first-child {
+    text-align: left;
+    border-radius: 10px;
+}
+
+.second-conteiner:last-child {
+    text-align: right;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: rgba(127, 255, 212, 0.51);
+    border-radius: 10px;
+    margin: 5px;
+    text-align: center;
+    font-size: 10px;
+}

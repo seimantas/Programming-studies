@@ -1,0 +1,18 @@
+body {
+    background-color: rgb(0, 0, 0);
+    margin: 0 auto;
+}
+
+nav {
+    background-color: blueviolet;
+    height: 50px;
+    margin-right: 10px;
+    border-bottom-right-radius: 20px;
+    align-content: space-around;
+}
+
+header nav a {
+    margin-left: 30px;
+    margin-top: 20px;
+    font-weight: bold;
+}
