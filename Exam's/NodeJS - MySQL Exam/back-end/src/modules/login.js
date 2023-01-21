@@ -5,9 +5,9 @@ import joi from "joi";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 
-const loginUser = Router();
+const login = Router();
 
-loginUser.post("/", async (req, res) => {
+login.post("/", async (req, res) => {
   const { password, email } = req.body;
 
   const userSchema = joi.object({
@@ -51,4 +51,4 @@ loginUser.post("/", async (req, res) => {
   }
 });
 
-export default loginUser;
+export default login;

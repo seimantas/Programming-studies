@@ -4,9 +4,9 @@ import mysql from "mysql2/promise";
 import joi from "joi";
 import bcrypt from "bcryptjs";
 
-const userRegister = Router();
+const register = Router();
 
-userRegister.post("/", async (req, res) => {
+register.post("/", async (req, res) => {
   const { full_name, password, email } = req.body;
 
   const userSchema = joi.object({
@@ -46,4 +46,4 @@ userRegister.post("/", async (req, res) => {
   }
 });
 
-export default userRegister;
+export default register;
