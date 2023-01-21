@@ -9,6 +9,6 @@ export const isLoggedIn = (req, res, next) => {
 
     next();
   } catch (error) {
-    res.status(401).send({ err: "User not verified!" });
+    res.status(401).send({ err: "User not verified!" }).end();
   }
 };

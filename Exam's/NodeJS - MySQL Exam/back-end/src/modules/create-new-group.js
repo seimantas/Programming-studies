@@ -8,13 +8,13 @@ const createNewGroup = Router();
 createNewGroup.post("/", async (req, res) => {
   const { name } = req.body;
 
-  const userSchema = joi.object({
+  const groupSchema = joi.object({
     name: joi.string().required(),
   });
 
   const newUserData = { name };
 
-  const validationResult = await userSchema.validate(newUserData);
+  const validationResult = await groupSchema.validate(newUserData);
   if (validationResult.error) throw Error(validationResult.error);
 
   if (!name) {
