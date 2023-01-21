@@ -15,7 +15,7 @@ app.use("/register", register);
 app.use("/login", login);
 app.use("/group", isLoggedIn, group);
 app.use("/account", isLoggedIn, account);
-app.use("/bills", bills);
+app.use("/bills", isLoggedIn, bills);
 
 app.listen(LOCAL_PORT, () =>
   console.log(`Server is running on: ${LOCAL_PORT}`)
