@@ -37,7 +37,10 @@ userRegister.post("/", async (req, res) => {
     );
     await con.end();
 
-    return res.status(201).send(`User ${full_name} successfully created`).end();
+    return res
+      .status(201)
+      .send(`User ${full_name} successfully created.`)
+      .end();
   } catch (err) {
     return res.status(500).send(err).end();
   }
