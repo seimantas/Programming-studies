@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { MYSQL_CONFIG } from "../config.js";
+import { jwtSecret, MYSQL_CONFIG } from "../config.js";
 import mysql from "mysql2/promise";
 import joi from "joi";
 import jwt from "jsonwebtoken";
@@ -17,8 +17,6 @@ loginUser.post("/", async (req, res) => {
 
   const loginUserData = { password, email };
 
-  console.log(loginUserData);
-
   const validationResult = userSchema.validate(loginUserData);
   if (validationResult.error) throw Error(validationResult.error);
 
@@ -28,8 +26,6 @@ loginUser.post("/", async (req, res) => {
       `SELECT * FROM users WHERE email=${mysql.escape(email)}`
     );
     await con.end();
-
-    console.log(mysql.escape(email));
 
     if (con.length === 0) {
       return res
@@ -41,7 +37,9 @@ loginUser.post("/", async (req, res) => {
     const isUserAuthed = bcrypt.compareSync(password, data[0].password);
 
     if (isUserAuthed) {
-      return res.send("ok");
+      const token = jwt.sign({ id: data[0].id }, jwtSecret);
+
+      return res.send({ mesage: "Successfully logged in", token });
     }
 
     return res

@@ -12,4 +12,4 @@ export const MYSQL_CONFIG = {
   database: process.env.database,
 };
 
-export const jwtSecret = process.env.jwtSecret;
+export const jwtSecret = process.env.JWT_SECRET;
