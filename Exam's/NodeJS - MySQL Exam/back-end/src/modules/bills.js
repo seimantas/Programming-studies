@@ -8,8 +8,6 @@ const bills = Router();
 bills.get("/:group_id", async (req, res) => {
   const group_id = +req.params.group_id;
 
-  console.log(group_id);
-
   const userSchema = joi.object({
     group_id: joi.number().required(),
   });

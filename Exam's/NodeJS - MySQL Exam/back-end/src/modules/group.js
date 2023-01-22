@@ -34,18 +34,4 @@ group.post("/", async (req, res) => {
   }
 });
 
-group.get("/", async (_, res) => {
-  try {
-    const con = await mysql.createConnection(MYSQL_CONFIG);
-    const groups = await con.execute(
-      "SELECT * FROM `bills-managing-DB`.groups_table"
-    );
-    await con.end();
-
-    return res.send(groups[0]).end;
-  } catch (err) {
-    return res.status(500).send(err).end();
-  }
-});
-
 export default group;

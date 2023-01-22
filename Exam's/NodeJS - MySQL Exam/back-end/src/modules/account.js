@@ -1,14 +1,19 @@
 import { Router } from "express";
-import { MYSQL_CONFIG } from "../config.js";
+import { jwtSecret, MYSQL_CONFIG } from "../config.js";
 import mysql from "mysql2/promise";
 import joi from "joi";
+import jwt from "jsonwebtoken";
 
 const account = Router();
 
 account.post("/", async (req, res) => {
-  const { group_id, user_id } = req.body;
+  const { group_id } = req.body;
 
-  console.log(req.body);
+  const token = req.headers.authorization?.split(" ")[1];
+
+  const decodedToken = jwt.verify(token, jwtSecret);
+
+  const user_id = decodedToken.id;
 
   const accountSchema = joi.object({
     group_id: joi.number().required(),
@@ -16,10 +21,9 @@ account.post("/", async (req, res) => {
   });
 
   const accoountData = { group_id, user_id };
-
   const validationResult = accountSchema.validate(accoountData);
-  if (validationResult.error) throw Error(validationResult.error);
 
+  if (validationResult.error) throw Error(validationResult.error);
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
     const [data] = await con.execute(
@@ -37,7 +41,11 @@ account.post("/", async (req, res) => {
 });
 
 account.get("/", async (req, res) => {
-  const { id } = req.body;
+  const token = req.headers.authorization?.split(" ")[1];
+
+  const decodedToken = jwt.verify(token, jwtSecret);
+
+  const id = decodedToken.id;
 
   const accountSchema = joi.object({
     id: joi.number().required(),
