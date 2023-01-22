@@ -26,6 +26,7 @@ account.post("/", async (req, res) => {
   if (validationResult.error) throw Error(validationResult.error);
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
+
     const [data] = await con.execute(
       `INSERT INTO accounts (group_id, user_id) VALUES ('${group_id}', '${user_id}')`
     );
@@ -58,6 +59,7 @@ account.get("/", async (req, res) => {
 
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
+
     const data = await con.execute(
       `SELECT groups_table.name, groups_table.id FROM groups_table INNER JOIN accounts ON accounts.group_id = groups_table.id WHERE accounts.user_id =${id}`
     );

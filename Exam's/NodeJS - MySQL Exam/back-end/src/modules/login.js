@@ -22,6 +22,7 @@ login.post("/", async (req, res) => {
 
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
+
     const [data] = await con.execute(
       `SELECT * FROM users WHERE email=${mysql.escape(email)}`
     );

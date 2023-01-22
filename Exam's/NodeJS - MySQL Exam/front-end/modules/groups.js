@@ -2,7 +2,6 @@ import { renderAllGroups } from "./renderAllGroups.js";
 import { renderUserGroups } from "./renderUsergroups.js";
 
 await renderAllGroups();
-
 await renderUserGroups();
 
 const addUserToGroup = document.querySelector("#addUserToGroup");

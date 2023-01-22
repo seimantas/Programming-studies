@@ -29,8 +29,6 @@ userRegistrationSubmit.addEventListener("submit", async (event) => {
     email: emailInput,
   });
 
-  console.log(newUser);
-
   try {
     const respons = await fetch("http://localhost:5000/register", {
       method: "POST",

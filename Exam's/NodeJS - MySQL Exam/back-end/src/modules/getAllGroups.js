@@ -7,6 +7,7 @@ const allGroups = Router();
 allGroups.get("/", async (_, res) => {
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
+
     const groups = await con.execute(
       "SELECT * FROM `bills-managing-DB`.groups_table"
     );

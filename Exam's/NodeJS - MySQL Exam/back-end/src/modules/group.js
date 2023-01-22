@@ -23,6 +23,7 @@ group.post("/", async (req, res) => {
 
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
+
     await con.execute(
       `INSERT INTO groups_table (name) VALUES (${mysql.escape(name)})`
     );

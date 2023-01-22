@@ -19,6 +19,7 @@ bills.get("/:group_id", async (req, res) => {
 
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
+
     const groups = await con.execute(
       `SELECT * FROM bills WHERE group_id =${group_id}`
     );
@@ -46,6 +47,7 @@ bills.post("/", async (req, res) => {
 
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
+
     await con.execute(
       `INSERT INTO bills (group_id, amount, description) VALUES (${mysql.escape(
         group_id
