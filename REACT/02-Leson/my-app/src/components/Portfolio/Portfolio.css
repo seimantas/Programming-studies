@@ -1,0 +1,31 @@
+.portfolio {
+  width: 60%;
+  margin: 20px auto 0 auto;
+}
+
+.portfolio > h2 {
+  color: black;
+}
+
+.img-container {
+  width: 300px;
+  height: 250px;
+  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.1);
+}
+
+.img-container > img {
+  object-fit: fill;
+  width: 100%;
+  max-height: 200px;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+
+p {
+  margin: 0;
+}
