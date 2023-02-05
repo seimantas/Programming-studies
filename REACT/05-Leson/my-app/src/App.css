@@ -1,0 +1,39 @@
+body {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMSwn1ODaD9eSFv6e7c5lsEYoH9KD18z5ajw&usqp=CAU);
+}
+.content-element {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  margin-left: 620px;
+  background-color: rgb(243, 241, 228);
+  text-align: center;
+  margin-top: 250px;
+  width: 600px;
+}
+
+.flex-element {
+  justify-content: space-between;
+  display: flex;
+}
+
+.list-element {
+  padding-right: 50px;
+  padding-left: 50px;
+  /* justify-content: space-between;
+  // display: flex; */
+}
+
+.element-list {
+  border-bottom: solid 1px black;
+  border-top: solid 1px black;
+  padding-left: 100px;
+}
+
+.delete-button {
+  border: solid 1px black;
+  margin-top: 15px;
+  height: 25px;
+  border-radius: 50px;
+}
