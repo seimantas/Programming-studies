@@ -1,29 +1,33 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
-const Home = () => {
-  const [orders, setOrders] = useState<string[]>([]);
+import { Add } from "./Add";
+import { Table } from "./Table";
+
+export const Home = () => {
+  const [data, setData] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  console.log(orders);
+  const fetchData = () => {
+    axios
+      .get("https://believed-shore-vanadium.glitch.me/")
+      .then((res) => setData(res.data))
+      .catch((error) => console.error(error))
+      .finally(() => {
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 1000);
+      });
+  };
 
   useEffect(() => {
-    const fetchProducts = () => {
-      fetch("https://golden-whispering-show.glitch.me")
-        .then((response) => response.json())
-        .then((data) => setOrders(data))
-        .catch((err) => {
-          console.error(err.message);
-        })
-        .finally(() => {
-          setTimeout(() => {
-            setIsLoading(false);
-          }, 1000);
-        });
-    };
-  });
+    fetchData();
+  }, []);
+
+  <Add />;
+
   return (
-    <div>
-      isLoading ? (<p>Loading</p>) : ( <div className="container">{orders}</div>
-      )
-    </div>
+    <>
+      {isLoading ? <p>Loading</p> : <Table data={data} fetchData={fetchData} />}
+    </>
   );
 };

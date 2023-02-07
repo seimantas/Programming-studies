@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  background-color: rgb(229, 229, 229);
+}
+
+header > a {
+  margin: 20px;
+}
+
+.container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+th,
+tr,
+td {
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+table {
+  width: 300px;
+}
