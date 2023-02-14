@@ -4,13 +4,16 @@ import { AddMed } from "../pages/AddMed";
 import { AddPet } from "../pages/AddPet";
 import { AddPrescription } from "../pages/AddPrescription";
 import { Home } from "../Home";
-import { Logs } from "../Logs";
-import { Meds } from "../Meds";
+import { Logs } from "../pages/Logs";
+
 import { HeaderStyled } from "./styles/HeaderStyled";
 import { LogoStyled } from "./styles/LogoStyled";
 import { StyledLink } from "./styles/StyledLink";
 import { Wrapper } from "./styles/Wrapper";
 import logo from "../logo.png";
+import { Meds } from "../pages/Meds";
+import { useContext } from "react";
+import { ProductsContext } from "./ProductsContext/ProductsContext";
 
 const MedsLink = <StyledLink to="/meds">Medications</StyledLink>;
 const LogsLink = <StyledLink to="#">Logs</StyledLink>;
@@ -18,6 +21,9 @@ const LogsLink = <StyledLink to="#">Logs</StyledLink>;
 export const Navigation = () => {
   const { pathname } = useLocation();
   const isOnLogsLink = pathname.includes("/logs");
+
+  const products = useContext(ProductsContext);
+  console.log(products);
 
   return (
     <>
