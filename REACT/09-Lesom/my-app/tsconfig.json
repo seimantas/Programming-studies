@@ -18,7 +18,6 @@
   },
   "include": [
     "src",
-    "../../../09-Lesom/my-app/src/components/BrowserRouter",
-    "../../../09-Lesom/my-app/src/components/BrowserRouter"
+    "../../08-Leson/Vetbee-service/my-app/src/components/BrowserRouter"
   ]
 }
