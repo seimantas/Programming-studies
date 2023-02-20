@@ -1,0 +1,27 @@
+.products-list {
+  margin: 60px;
+  text-align: center;
+  justify-content: space-around;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-row: auto auto;
+}
+
+.products-list > div {
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 20px;
+  background-color: rgb(255, 255, 248);
+  border: solid 1px black;
+}
+
+div > h2,
+p {
+  margin: 0 auto;
+}
+
+.products-list-header {
+  margin-top: 30px;
+  text-align: center;
+}

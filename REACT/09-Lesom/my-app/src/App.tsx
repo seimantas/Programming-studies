@@ -1,13 +1,15 @@
 import "./App.css";
+import { ProductsContext } from "./components/ProductsContext";
+import { INITIAL_PRODUCTS } from "./utils/initialProducts";
+import { useState } from "react";
+import { MainRouter } from "./components/MainRouter/MainRouter";
 
-function App() {
+export const App = () => {
+  const [products, setProducts] = useState(INITIAL_PRODUCTS);
+
   return (
-    <div>
-      <ProductsContext.Provider value={products}>
-        <BrowserRouter />
-      </ProductsContext.Provider>
-    </div>
+    <ProductsContext.Provider value={{ products, setProducts }}>
+      <MainRouter />
+    </ProductsContext.Provider>
   );
-}
-
-export default App;
+};
