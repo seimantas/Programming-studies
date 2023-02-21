@@ -6,8 +6,6 @@ import { TProduct } from "../../types/TProduct";
 export const ProductsList = () => {
   const { products, setProducts } = useContext(ProductsContext);
 
-  console.log(products);
-
   const handleAddToCart = (product: TProduct, index: number) => {
     const modifiedProducts = [...products];
 
