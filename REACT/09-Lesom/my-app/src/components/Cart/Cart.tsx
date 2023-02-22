@@ -1,40 +1,56 @@
-import { useContext, useReducer } from "react";
+import { useContext } from "react";
 import { ProductsContext } from "../ProductsContext";
-
-const reducer = (state: any, action: any) => {
-  switch (action.type) {
-    case "increment-amount":
-      return { ...state, amount: state.amount + 1 };
-    case "decrement-amount":
-      return { ...state, amount: state.amount - 1 };
-    default:
-  }
-};
 
 export const Cart = () => {
   const { products, setProducts } = useContext(ProductsContext);
 
-  const [state, dispatch] = useReducer(reducer, { amount: 0 });
+  const incrementAmount = (id: number) => {
+    const incrementProduct = products.map((product: any) => {
+      if (product.id === id) {
+        return { ...product, amount: product.amount + 1 };
+      } else {
+        return product;
+      }
+    });
+    setProducts(incrementProduct);
+  };
 
-  const selectedProducts = products.filter((product) => product.amount > 0);
+  const decrementAmount = (id: number) => {
+    const decrementProduct = products.map((product: any) => {
+      if (product.id === id) {
+        return { ...product, amount: product.amount - 1 };
+      } else {
+        return product;
+      }
+    });
+    setProducts(decrementProduct);
+  };
 
-  const productFullprice = selectedProducts.reduce(
-    (acc, product) => acc + product.price * product.amount,
-    0
+  const selectedProducts = products.filter(
+    (product: any) => product.amount > 0
   );
   console.log(products);
+
   return (
     <div className="products-list">
-      {selectedProducts.map((product) => {
+      {selectedProducts.map((product: any) => {
         return (
           <div key={product.id}>
             <h2>{product.name}</h2>
-            <p>Price: {productFullprice} $</p>
+            <p>Price: {product.price * product.amount} $</p>
             <p>Amount: {product.amount}</p>
-            <button onClick={() => dispatch({ type: "increment-amount" })}>
+            <button
+              onClick={() => {
+                incrementAmount(product.id);
+              }}
+            >
               +
             </button>
-            <button onClick={() => dispatch({ type: "decrement-amount" })}>
+            <button
+              onClick={() => {
+                decrementAmount(product.id);
+              }}
+            >
               -
             </button>
           </div>
