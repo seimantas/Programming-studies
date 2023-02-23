@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Headrer.css";
-import { CartLogo } from "../CartLogo/CartLogo";
-import { ShopLogo } from "../ShopLogo/ShopLogo";
+import { CartLogo } from "../../utils/CartLogo/CartLogo";
+import { ShopLogo } from "../../utils/ShopLogo/ShopLogo";
 
 export const Header = () => {
   return (
