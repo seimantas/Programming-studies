@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Fade } from "@mui/material";
+import { useReducer } from "react";
+import { ProductsContext, MainRouter, productsReducer } from "./components";
 
-function App() {
+export const App = () => {
+  const [state, dispatch] = useReducer(productsReducer, {
+    fetchedProducts: [],
+    cartProducts: [],
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fade in>
+      <div>
+        <ProductsContext.Provider value={{ ...state, dispatch }}>
+          <MainRouter />
+        </ProductsContext.Provider>
+      </div>
+    </Fade>
   );
-}
-
-export default App;
+};
