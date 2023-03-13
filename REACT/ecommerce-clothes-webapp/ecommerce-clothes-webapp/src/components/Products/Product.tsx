@@ -22,6 +22,7 @@ export const Product: FC<TProductProps> = ({ product }) => {
       boxShadow="0px 0px 8px 1px rgba(0, 0, 0, 0.1)"
       borderRadius="5px"
       textAlign="center"
+      aria-label="product"
     >
       <Box
         display="flex"
@@ -33,17 +34,15 @@ export const Product: FC<TProductProps> = ({ product }) => {
           "& img": { objectFit: "cover", width: "100%", maxHeight: "100%" },
         }}
       >
-        <img
-          src={`${product.image}?w=248&fit=crop&auto=format`}
-          srcSet={`${product.image}?w=248&h&fit=crop&auto=format&dpr=2 2x`}
-          loading="lazy"
-          alt={product.title ?? "Product image"}
-        />
+        <img src={product.image} alt={product.title ?? "Product image"} />
       </Box>
 
-      <Box height="50px" overflow="clip">
-        <Typography>{product.title}</Typography>
-        <Typography>PRICE: {product.price}</Typography>
+      <Box height="70px" overflow="clip">
+        <Typography height="50px" overflow="hidden">
+          {product.title}
+        </Typography>
+        <Typography color="darkRed">PRICE: {product.price}</Typography>
+        <Typography>{product.description}</Typography>
       </Box>
 
       <Box
